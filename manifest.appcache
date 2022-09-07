@@ -1,3 +1,10 @@
-CACHE MANIFEST
-# 1
-/index.html
+{
+  "name": "Page",
+  "short_name": "Page",
+  "description": "A page",
+  "scope": "/travis-scholtens/",
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "display": "standalone", 
+}
