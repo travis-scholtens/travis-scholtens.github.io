@@ -22,12 +22,16 @@
     const cacheName = 'tps_lineups';
     
     const chooseTeam = division => {
+      history.pushState({division: division});
+
       const todo = document.createElement('div');
       todo.innerText = division;
       return [todo];
     };
     
     const chooseDivision = () => {
+      history.pushState({divisions: true});
+      
       return Object.keys(rosters).sort().map(name => {
         const division = document.createElement('div');
         division.class = 'list-group w-auto';
@@ -42,13 +46,18 @@
       });
     };
     
-    const lineupList = lineups => {
+    const lineupList = () => {
+      history.pushState({lineups: true});
+      
       const newLineup = document.createElement('button');
       newLineup.class = 'w-100 btn btn-lg btn-primary';
       newLineup.innerText = 'New...'
       newLineup.addEventListener('click', () => {
         setContent(chooseDivision());
       });
+      
+      const lineups = loadLineups();
+      
       return [newLineup];
     };
     
@@ -60,15 +69,29 @@
       elements.forEach(e => content.appendChild(e));
     };
     
-    window.onload = () => {
+    const loadLineups = () => {
       let lineups = localStorage.getItem(cacheName);
       if (lineups === null) {
         lineups = [];
       }
-      setContent(lineupList(lineups));
+      return lineups;
+    }
+    
+    window.addEventListener('popstate', e => {
+      const state = e.state;
+      if (state !== null) {
+        if (state['lineups'] === true) {
+          setContent(lineupList());
+        } else if (state['divisions'] === true)
+          setContent(chooseDivision());
+        }
+      }
+    });
+    
+    window.onload = () => {
+      setContent(lineupList());
     };
   </script>
-  
   <div id="content">
   </div>
 </body>
