@@ -2,7 +2,7 @@
   "name": "Page",
   "short_name": "Page",
   "description": "A page",
-  "scope": "/travis-scholtens/",
+  "scope": "/",
   "start_url": "/",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
