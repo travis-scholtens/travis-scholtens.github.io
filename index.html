@@ -156,11 +156,11 @@
             if (state['court'] !== undefined) {
               setContent(selectPlayer(state['division'], state['team'], state['lineup'], state['court'], state['position']));
             } else {
-              const lineup = state['lineup'];
               if (selectedPlayer !== null) {
-                lineup['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['name'];
+                state['lineup']['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['name'];
                 selectedPlayer = null;
               }
+              history.replaceState(state, 'Edit lineup');
               setContent(editLineup(state['division'], state['team'], lineup));
             }
           } else {
