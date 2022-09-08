@@ -161,10 +161,10 @@
                 selectedPlayer = null;
               }
               history.replaceState(state, 'Edit lineup');
-              setContent(editLineup(state['division'], state['team'], lineup));
+              setContent(editLineup(state['division'], state['team'], state['lineup']));
             }
           } else {
-            setContent(chooseTeams(state['division']));
+            setContent(chooseTeam(state['division']));
           }
         }
       }
