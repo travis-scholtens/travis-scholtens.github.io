@@ -171,9 +171,9 @@
     };
     
     const loadLineups = () => {
-      let lineups = localStorage.getItem(cacheName);
+      const lineups = localStorage.getItem(cacheName);
       if (lineups === null) {
-        lineups = [];
+        return [];
       }
       return JSON.parse(lineups);
     }
