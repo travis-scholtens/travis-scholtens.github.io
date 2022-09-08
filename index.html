@@ -39,13 +39,13 @@
       elements.forEach(e => content.appendChild(e));
     }
     
-    window.onload(() => {
+    window.onload = () => {
       let lineups = localStorage.getItem(cacheName);
       if (lineups === null) {
         lineups = [];
       }
       setContent(lineupList(lineups));
-    })
+    };
   </script>
   
   <div id="content">
