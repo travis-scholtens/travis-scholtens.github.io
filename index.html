@@ -141,6 +141,7 @@
         const division = lineup_data[0];
         const team = lineup_data[1];
         const lineup = lineup_data[2];
+        
         const edit = document.createElement('div');
         edit.class = 'list-group w-auto';
         edit.innerHTML =
@@ -149,11 +150,12 @@
           + division + ', '
           + team +
           '</h6></div></div></a>';
-        division.addEventListener('click', () => {
+        edit.addEventListener('click', () => {
           history.pushState({division: division, team: team, lineup: lineup}, 'Edit lineup');
           setContent(editLineup(division, team, lineup));
         });
-        return division;
+        
+        return edit;
       });
     };
     
