@@ -22,7 +22,7 @@
     const cacheName = 'tps_lineups';
     
     const selectPlayer = (division, team, lineup, court, position) => {
-      return Object.keys(rosters[division][team]).sort().map(player => {
+      return rosters[division][team].sort().map(player => {
         const name = document.createElement('div');
         name.class = 'list-group w-auto';
         name.innerHTML =
