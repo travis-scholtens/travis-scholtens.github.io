@@ -98,7 +98,8 @@
             history.pushState({division: division, team: name, lineup: lineup, court: court, position: position}, 'Select player');
             setContent(selectPlayer(division, team, lineup, court, position));
           });
-          player.innerText = lineup['court'][court][position] || 'Select...';
+          const playerInfo = lineup['court'][court][position];
+          player.innerText = playerInfo ? (playerInfo['name'] + (playerInfo['rank'] !== undefined ? ' (' + playerInfo['rank'] + ')' : '')) : 'Select...';
           innerDiv.appendChild(player);
         });
         return line;
