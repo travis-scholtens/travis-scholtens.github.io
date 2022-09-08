@@ -76,7 +76,7 @@
       other.appendChild(label);
       const value = document.createElement('input');
       value.type = 'text';
-      value.addEventListener('input', e => {
+      value.addEventListener('change', e => {
         selectedPlayer = {court: court, position: position, player: {name: e.target.value, adhoc: true}};
         history.back();
       });
