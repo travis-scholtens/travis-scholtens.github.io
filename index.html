@@ -93,7 +93,23 @@
         history.back();
       });      
       
-      return lines.concat([save]);
+      const remove = document.createElement('button');
+      remove.class = 'w-100 btn btn-lg btn-primary';
+      save.innerText = 'Remove'
+      save.addEventListener('click', () => {
+        let lineups = loadLineups();
+        for (let i = 0; i < lineups.length; i++) {
+          if (lineups[i][0] == division && lineups[i][1] == team && lineups[i][2]['date'] == lineup['date']) {
+            lineups.splice(i, 1);
+            break;
+          }
+        }
+        localStorage.setItem(cacheName, JSON.stringify(lineups));
+        saved = true;
+        history.back();
+      });      
+      
+      return lines.concat([save, remove]);
     };
     
     const chooseTeam = division => {
