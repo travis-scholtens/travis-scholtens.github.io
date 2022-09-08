@@ -69,8 +69,20 @@
         history.pushState({division: division, team: team, lineup: lineup, court: court, position: position, sub: true}, 'Select sub');
         setContent(selectSub(division, team, lineup, court, position));
       });
+      
+      const other = document.createElement('div');
+      const label = document.createElement('span');
+      label.innerText = 'Other:';
+      other.appendChild(label);
+      const value = document.createElement('input');
+      value.type = 'text';
+      value.addEventListener('input', e => {
+        selectedPlayer = {court: court, position: position, player: {name: e.target.value, adhoc: true}};
+        history.back();
+      });
+      other.appendChild(value);
           
-      return players.concat([sub]);
+      return players.concat([sub, other]);
     };
     
     const editLineup = (division, team, lineup) => {
