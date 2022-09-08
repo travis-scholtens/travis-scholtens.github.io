@@ -3,5 +3,11 @@
 <head>
   <link rel="manifest" href="/manifest.webmanifest">
 </head>
-<body>hi</body>
+<body>hi
+  <script>
+    if (navigator.serviceWorker) {
+      navigator.serviceWorker.register('/sw.js', {scope: '//'})
+    }
+  </script>  
+</body>
 </html>
