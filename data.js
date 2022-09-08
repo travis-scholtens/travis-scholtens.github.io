@@ -39,7 +39,7 @@ const rosters = {
     ]
   },
   'Division 3': {
-    'Some Team': [{
+    'Another Team': [{
         name: 'Presley Gronchi'
       }
     ]
