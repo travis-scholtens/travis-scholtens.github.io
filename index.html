@@ -80,7 +80,7 @@
         history.back();
       });      
       
-      return lines + [save];
+      return lines.concat([save]);
     };
     
     const chooseTeam = division => {
@@ -137,7 +137,7 @@
       
       const lineups = loadLineups();
       
-      return [newLineup] + lineups.map(lineup_data => {
+      const savedLineups = lineups.map(lineup_data => {
         const division = lineup_data[0];
         const team = lineup_data[1];
         const lineup = lineup_data[2];
@@ -157,6 +157,8 @@
         
         return edit;
       });
+      
+      return [newLineup].concat(savedLineups);
     };
     
     const setContent = elements => {
