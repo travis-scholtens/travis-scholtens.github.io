@@ -23,6 +23,8 @@
     
     let selectedPlayer = null;
     
+    let saved = false;
+    
     const selectPlayer = (division, team, lineup, court, position) => {
       return rosters[division][team].sort().map(player => {
         const name = document.createElement('div');
@@ -40,7 +42,7 @@
     };
     
     const editLineup = (division, team, lineup) => {
-      return [1,2,3,4,5,6].map(court => {
+      var lines = [1,2,3,4,5,6].map(court => {
         const line = document.createElement('div');
         line.class = 'list-group w-auto';
         line.innerHTML =
@@ -69,6 +71,16 @@
         });
         return line;
       });
+      
+      const save = document.createElement('button');
+      save.class = 'w-100 btn btn-lg btn-primary';
+      save.innerText = 'Save'
+      save.addEventListener('click', () => {
+        localStorage.setItem(cacheName, loadLineups() + [[division, team, lineup]]);
+        history.back();
+      });      
+      
+      return lines + [save];
     };
     
     const chooseTeam = division => {
@@ -125,7 +137,24 @@
       
       const lineups = loadLineups();
       
-      return [newLineup];
+      return [newLineup] + lineups.map(lineup_data => {
+        const division = lineup_data[0];
+        const team = lineup_data[1];
+        const lineup = lineup_data[2];
+        const edit = document.createElement('div');
+        edit.class = 'list-group w-auto';
+        edit.innerHTML =
+          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          + lineup['date'] + ': '
+          + division + ', '
+          + team +
+          '</h6></div></div></a>';
+        division.addEventListener('click', () => {
+          history.pushState({division: division, team: team, lineup: lineup}, 'Edit lineup');
+          setContent(editLineup(division, team, lineup));
+        });
+        return division;
+      });
     };
     
     const setContent = elements => {
@@ -148,9 +177,16 @@
       const state = e.state;
       if (state !== null) {
         if (state['lineups'] === true) {
+          if (saved) {
+            saved = false;
+          }
           setContent(lineupList());
         } else if (state['divisions'] === true) {
-          setContent(chooseDivision());
+          if (saved) {
+            history.back();
+          } else {
+            setContent(chooseDivision());
+          }
         } else if (state['division'] !== undefined) {
           if (state['lineup'] !== undefined) {
             if (state['court'] !== undefined) {
@@ -164,7 +200,11 @@
               setContent(editLineup(state['division'], state['team'], state['lineup']));
             }
           } else {
-            setContent(chooseTeam(state['division']));
+            if (saved) {
+              history.back();
+            } else {
+              setContent(chooseTeam(state['division']));
+            }
           }
         }
       }
