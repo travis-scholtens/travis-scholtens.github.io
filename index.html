@@ -25,20 +25,52 @@
     
     let saved = false;
     
-    const selectPlayer = (division, team, lineup, court, position) => {
-      return rosters[division][team].sort().map(player => {
+    const selectSub = (division, team, lineup, court, position) => {
+      let availableSubs = [];
+      Object.keys(rosters).forEach(subDivision => {
+        if (subDivision > division && rosters[subDivision][team] !== undefined) {
+          availableSubs = availableSubs.concat(rosters[subDivision][team]);
+        }
+      });
+      return availableSubs.sort().map(player => {
         const name = document.createElement('div');
         name.class = 'list-group w-auto';
         name.innerHTML =
           '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
-          + player['name'] + 
+          + player['name'] +
           '</h6></div></div></a>';
         name.addEventListener('click', () => {
-          selectedPlayer = {court: court, position: position, name: player['name']};
+          selectedPlayer = {court: court, position: position, player: {name: player['name'], sub: true}};
           history.back();
         });
         return name;
       });
+    };
+    
+    const selectPlayer = (division, team, lineup, court, position) => {
+      const players = rosters[division][team].sort().map(player => {
+        const name = document.createElement('div');
+        name.class = 'list-group w-auto';
+        name.innerHTML =
+          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          + player['name'] + (player['rank'] !== undefined ? ' (' + player['rank'] + ')' : '') +
+          '</h6></div></div></a>';
+        name.addEventListener('click', () => {
+          selectedPlayer = {court: court, position: position, player: player};
+          history.back();
+        });
+        return name;
+      });
+          
+      const sub = document.createElement('button');
+      sub.class = 'w-100 btn btn-lg btn-primary';
+      sub.innerText = 'Sub...'
+      sub.addEventListener('click', () => {
+        history.pushState({division: division, team: team, lineup: lineup, court: court, position: position, sub: true}, 'Select sub');
+        setContent(selectSub(division, team, lineup, court, position));
+      });
+          
+      return players.concat([sub]);
     };
     
     const editLineup = (division, team, lineup) => {
@@ -226,7 +258,7 @@
               setContent(selectPlayer(state['division'], state['team'], state['lineup'], state['court'], state['position']));
             } else {
               if (selectedPlayer !== null) {
-                state['lineup']['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['name'];
+                state['lineup']['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['player'];
                 selectedPlayer = null;
               }
               history.replaceState(state, 'Edit lineup');
