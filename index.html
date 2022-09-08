@@ -22,16 +22,12 @@
     const cacheName = 'tps_lineups';
     
     const chooseTeam = division => {
-      history.pushState({division: division}, 'Choose team');
-
       const todo = document.createElement('div');
       todo.innerText = division;
       return [todo];
     };
     
     const chooseDivision = () => {
-      history.pushState({divisions: true}, 'Choose division');
-      
       return Object.keys(rosters).sort().map(name => {
         const division = document.createElement('div');
         division.class = 'list-group w-auto';
@@ -40,19 +36,19 @@
           + name + 
           '</h6></div></div></a>';
         division.addEventListener('click', () => {
+          history.pushState({division: name}, 'Choose team');
           setContent(chooseTeam(name));
         });
         return division;
       });
     };
     
-    const lineupList = () => {
-      history.pushState({lineups: true}, 'Lineups');
-      
+    const lineupList = () => {     
       const newLineup = document.createElement('button');
       newLineup.class = 'w-100 btn btn-lg btn-primary';
       newLineup.innerText = 'New...'
       newLineup.addEventListener('click', () => {
+        history.pushState({divisions: true}, 'Choose division');
         setContent(chooseDivision());
       });
       
@@ -91,6 +87,7 @@
     });
     
     window.onload = () => {
+      history.pushState({lineups: true}, 'Lineups');
       setContent(lineupList());
     };
   </script>
