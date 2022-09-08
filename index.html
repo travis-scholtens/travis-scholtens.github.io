@@ -76,7 +76,7 @@
       save.class = 'w-100 btn btn-lg btn-primary';
       save.innerText = 'Save'
       save.addEventListener('click', () => {
-        localStorage.setItem(cacheName, loadLineups().concat([[division, team, lineup]]));
+        localStorage.setItem(cacheName, JSON.stringify(loadLineups().concat([[division, team, lineup]])));
         saved = true;
         history.back();
       });      
@@ -175,7 +175,7 @@
       if (lineups === null) {
         lineups = [];
       }
-      return lineups;
+      return JSON.parse(lineups);
     }
     
     window.addEventListener('popstate', e => {
