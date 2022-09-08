@@ -15,10 +15,19 @@
     
     const cacheName = 'tps_lineups';
     
+    const chooseDivision = () {
+      const todo = document.createElement('div');
+      todo.innerText = 'TODO';
+      return [todo];
+    };
+    
     const lineupList = lineups => {
       const newLineup = document.createElement('button');
       newLineup.class = 'w-100 btn btn-lg btn-primary';
       newLineup.innerText = 'New...'
+      newLineup.addEventListener('click', () => {
+        setContent(chooseDivision());
+      });
       return [newLineup];
     }
     
