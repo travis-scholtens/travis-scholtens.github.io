@@ -15,7 +15,7 @@
     
     const cacheName = 'tps_lineups';
     
-    const chooseDivision = () {
+    const chooseDivision = () => {
       const todo = document.createElement('div');
       todo.innerText = 'TODO';
       return [todo];
@@ -29,7 +29,7 @@
         setContent(chooseDivision());
       });
       return [newLineup];
-    }
+    };
     
     const setContent = elements => {
       const content = document.getElementById('content');
@@ -37,7 +37,7 @@
         content.removeChild(content.firstChild);
       }
       elements.forEach(e => content.appendChild(e));
-    }
+    };
     
     window.onload = () => {
       let lineups = localStorage.getItem(cacheName);
