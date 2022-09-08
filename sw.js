@@ -2,7 +2,8 @@ const APP_PREFIX = 'tps_';
 const VERSION = '0';
 const URLS = [    
   '/',
-  '/index.html'
+  '/index.html',
+  '/data.js'
 ]
 const CACHE_NAME = APP_PREFIX + VERSION
 
