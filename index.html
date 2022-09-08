@@ -79,7 +79,7 @@
         let lineups = loadLineups();
         let found = false;
         for (let i = 0; i < lineups.length; i++) {
-          if (lineups[i][0] == division && lineups[i][0] == team && lineups[i][2]['date'] == lineup['date']) {
+          if (lineups[i][0] == division && lineups[i][1] == team && lineups[i][2]['date'] == lineup['date']) {
             lineups[i][2] = lineup;
             found = true;
             break;
