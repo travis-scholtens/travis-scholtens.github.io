@@ -4,10 +4,11 @@
   <link rel="manifest" href="/manifest.webmanifest">
 </head>
 <body>hi
+  <script src="data.js" type="text/javascript"></script>
   <script>
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register('/sw.js', {scope: '/'})
     }
-  </script>  
+  </script>
 </body>
 </html>
