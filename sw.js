@@ -1,5 +1,5 @@
 const APP_PREFIX = 'tps_';
-const VERSION = '1';
+const VERSION = '2';
 const URLS = [    
   '/',
   '/index.html',
