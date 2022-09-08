@@ -31,7 +31,7 @@
           '</h6></div></div></a>';
         name.addEventListener('click', () => {
           lineup['court'][court][position] = player['name'];
-          history.replaceState({division: division, team: name, lineup: lineup}, 'Edit lineup');
+          history.replaceState({division: division, team: team, lineup: lineup}, 'Edit lineup');
           history.back();
         });
         return name;
