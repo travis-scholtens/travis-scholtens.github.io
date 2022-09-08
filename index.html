@@ -82,8 +82,10 @@
       if (state !== null) {
         if (state['lineups'] === true) {
           setContent(lineupList());
-        } else if (state['divisions'] === true)
+        } else if (state['divisions'] === true) {
           setContent(chooseDivision());
+        } else if (state['division'] !== undefined) {
+          setContent(chooseTeams(state['division']));
         }
       }
     });
