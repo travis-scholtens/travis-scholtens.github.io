@@ -21,6 +21,8 @@
     
     const cacheName = 'tps_lineups';
     
+    let selectedPlayer = null;
+    
     const selectPlayer = (division, team, lineup, court, position) => {
       return rosters[division][team].sort().map(player => {
         const name = document.createElement('div');
@@ -30,8 +32,7 @@
           + player['name'] + 
           '</h6></div></div></a>';
         name.addEventListener('click', () => {
-          lineup['court'][court][position] = player['name'];
-          history.replaceState({division: division, team: team, lineup: lineup}, 'Edit lineup');
+          selectedPlayer = {court: court, position: position, name: player['name']};
           history.back();
         });
         return name;
@@ -90,7 +91,7 @@
               6: {1: null, 2: null}
             }
           };
-          history.pushState({division: division, team: name, newLineup}, 'Edit lineup');
+          history.pushState({division: division, team: name, lineup: newLineup}, 'Edit lineup');
           setContent(editLineup(division, name, newLineup));
         });
         return team;
@@ -155,7 +156,12 @@
             if (state['court'] !== undefined) {
               setContent(selectPlayer(state['division'], state['team'], state['lineup'], state['court'], state['position']));
             } else {
-              setContent(editLineup(state['division'], state['team'], state['lineup']));
+              const lineup = state['lineup'];
+              if (selectedPlayer !== null) {
+                lineup['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['name'];
+                selectedPlayer = null;
+              }
+              setContent(editLineup(state['division'], state['team'], lineup));
             }
           } else {
             setContent(chooseTeams(state['division']));
