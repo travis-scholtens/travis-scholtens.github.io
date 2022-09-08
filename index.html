@@ -12,6 +12,33 @@
     if (navigator.serviceWorker) {
       navigator.serviceWorker.register('/sw.js', {scope: '/'})
     }
+    
+    const cacheName = 'tps_lineups';
+    
+    const lineupList = lineups => {
+      const newLineup = document.createElement('button');
+      newLineup.class = 'w-100 btn btn-lg btn-primary';
+      return [newLineup];
+    }
+    
+    const setContent => elements => {
+      const content = document.getElementById('content');
+      while(content.firstChild) {
+        content.removeChild(content.firstChild);
+      }
+      elements.forEach(e => content.appendChild(e));
+    }
+    
+    window.onload(() => {
+      let lineups = localStorage.getItem(cacheName);
+      if (lineups === null) {
+        lineups = [];
+      }
+      setContent(lineupList(lineups));
+    })
   </script>
+  
+  <div id="content">
+  </div>
 </body>
 </html>
