@@ -64,7 +64,7 @@
             history.pushState({division: division, team: name, lineup: lineup, court: court, position: position}, 'Select player');
             setContent(selectPlayer(division, team, lineup, court, position));
           });
-          player.innerText = lineup['court'][court][1] || 'Select...';
+          player.innerText = lineup['court'][court][position] || 'Select...';
           innerDiv.appendChild(player);
         });
         return line;
