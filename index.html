@@ -432,7 +432,7 @@
         edit.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         edit.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
-          + lineup['date'] + ': '
+          + lineup['date'].split('T')[0] + ': '
           + division + ', '
           + team +
           '</h6></div></div>';
