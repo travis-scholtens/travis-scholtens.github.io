@@ -108,10 +108,10 @@
             [1,2].forEach(position => {
               if (lineup['court'][court][position] !== null &&
                   !lineup['court'][court][position]['sub']) {
-                notes[court].push(
-                  'Substitute ' + firstSub['name'] +
-                  ' cannot play above rostered player ' +
-                  lineup['court'][court][position]['name']);
+                notes[court].push({
+                  message: 'Substitute ' + firstSub['name'] +
+                           ' cannot play above rostered player ' +
+                           lineup['court'][court][position]['name']});
                }
             });
           } else {
