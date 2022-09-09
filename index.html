@@ -249,7 +249,7 @@
       [1,2,3,4,5,6].forEach(court => {
         [1,2].forEach(position => {
           if (lineup['court'][court][position] !== null &&
-              lineup['court'][court][position]['adhoc']]) {
+              lineup['court'][court][position]['adhoc']) {
               notes[court].push({warning: true,
                                  message: lineup['court'][court][position]['name'] +
                                  ' was entered manually'});
