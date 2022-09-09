@@ -94,6 +94,12 @@
     };
     
     const notes6d = (division, team, lineup) => {
+      const fourCourtException = [1,2,3,4].every(court => {
+        return [1,2].every(position => {
+          return lineup['court'][court][position] === null ||
+            lineup['court']['position']['sub'] === undefined;
+        });
+      });
       return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
     };
     
