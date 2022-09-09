@@ -301,9 +301,9 @@
         notes[court].forEach(item => {
           const note = document.createElement('small');
           note.className = 'mb-0';
-          if (note['error']) {
+          if (item['error']) {
             note.classList.add('error');
-          } else if (note['warning']) {
+          } else if (item['warning']) {
             note.classList.add('warning');
           }
           note.innerText = item['message'];
