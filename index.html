@@ -108,8 +108,8 @@
             [1,2].forEach(position => {
               if (lineup['court'][court][position] !== null &&
                   !lineup['court'][court][position]['sub']) {
-                notes[court].push({
-                  message: 'Substitute ' + firstSub['name'] +
+                notes[firstSub[0]].push({
+                  message: 'Substitute ' + firstSub[1]['name'] +
                            ' cannot play above rostered player ' +
                            lineup['court'][court][position]['name']});
                }
@@ -118,7 +118,7 @@
             for (let position = 1; position <= 2; position++) {
               if (lineup['court'][court][position] !== null &&
                   lineup['court'][court][position]['sub']) {
-                firstSub = lineup['court'][court][position];
+                firstSub = [court, lineup['court'][court][position]];
                 break;
               }
             }
