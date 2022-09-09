@@ -181,12 +181,10 @@
         });
         
         notes[court].forEach(items => {
-          items.forEach(item => {
-            const note = document.createElement('div');
-            note.class = 'mb-0';
-            note.innerText = item['message'];
-            innerDiv.appendChild(note);
-          });
+          const note = document.createElement('div');
+          note.class = 'mb-0';
+          note.innerText = item['message'];
+          innerDiv.appendChild(note);
         });
         
         return line;
