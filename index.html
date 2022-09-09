@@ -46,7 +46,7 @@
           history.back();
         });
         return name;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
       return [group];
     };
     
@@ -65,7 +65,7 @@
           history.back();
         });
         return name;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
           
       const sub = document.createElement('button');
       sub.class = 'w-100 btn btn-lg btn-primary';
@@ -282,7 +282,7 @@
         });
         
         return line;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
       
       const save = document.createElement('button');
       save.class = 'w-100 btn btn-lg btn-primary';
@@ -350,7 +350,7 @@
           setContent(editLineup(division, name, newLineup));
         });
         return team;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
       return [group];
     };
     
@@ -369,7 +369,7 @@
           setContent(chooseTeam(name));
         });
         return division;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
       return [group];
     };
     
@@ -405,7 +405,7 @@
         });
         
         return edit;
-      }).forEach(group.appendChild);
+      }).forEach(e => group.appendChild(e));
       
       return [newLineup, group];
     };
