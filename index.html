@@ -97,10 +97,35 @@
       const fourCourtException = [1,2,3,4].every(court => {
         return [1,2].every(position => {
           return lineup['court'][court][position] === null ||
-            lineup['court']['position']['sub'] === undefined;
+            lineup['court'][court][position]['sub'] === undefined;
         });
       });
-      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      if (!fourCourtException) {
+        let firstSub = null;
+        [1,2,3,4,5].forEach(court => {
+          if (firstSub) {
+            ([1,2].forEach(position => {
+              if (lineup['court'][court][position] !== null &&
+                  !lineup['court'][court][position]['sub']) {
+                notes[court].push(
+                  'Substitute ' + firstSub['name'] +
+                  ' cannot play above rostered player ' +
+                  lineup['court'][court][position]['name']);
+               }
+            });
+          } else {
+            for (let position = 1; position <= 2; position++) {
+              if (lineup['court'][court][position] !== null &&
+                  lineup['court'][court][position]['sub']) {
+                firstSub = lineup['court'][court][position];
+                break;
+              }
+            }
+          }
+        });
+      }
+      return notes;
     };
     
     const notes6g = (division, team, lineup) => {
