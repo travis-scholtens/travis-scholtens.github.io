@@ -93,51 +93,137 @@
       return res;
     };
     
+    // Subs playing up can't play above rostered players.
     const notes6d = (division, team, lineup) => {
-      const fourCourtException = [1,2,3,4].every(court => {
-        return [1,2].every(position => {
-          return lineup['court'][court][position] === null ||
-            lineup['court'][court][position]['sub'] === undefined;
-        });
-      });
       const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
-      if (!fourCourtException) {
-        let firstSub = null;
-        [1,2,3,4,5].forEach(court => {
-          if (firstSub) {
-            [1,2].forEach(position => {
-              if (lineup['court'][court][position] !== null &&
-                  !lineup['court'][court][position]['sub']) {
-                notes[firstSub[0]].push({
-                  message: 'Substitute ' + firstSub[1]['name'] +
-                           ' cannot play above rostered player ' +
-                           lineup['court'][court][position]['name']});
-               }
-            });
-          } else {
-            for (let position = 1; position <= 2; position++) {
-              if (lineup['court'][court][position] !== null &&
-                  lineup['court'][court][position]['sub']) {
-                firstSub = [court, lineup['court'][court][position]];
-                break;
-              }
+      // Exception: if courts 1-4 are all rostered players, anything goes on 5 and 6.
+      if ([1,2,3,4].every(court =>
+                          {
+                            return [1,2].every(position => {
+                              return lineup['court'][court][position] === null ||
+                                lineup['court'][court][position]['sub'] === undefined;
+                            });
+                          }) {
+        return notes;
+      }
+      let firstSub = null;
+      [1,2,3,4,5].forEach(court => {
+        if (firstSub) {
+          [1,2].forEach(position => {
+            if (lineup['court'][court][position] !== null &&
+                !lineup['court'][court][position]['sub']) {
+              notes[firstSub[0]].push({
+                message: 'Substitute ' + firstSub[1]['name'] +
+                         ' cannot play above rostered player ' +
+                         lineup['court'][court][position]['name']});
+             }
+          });
+        } else {
+          for (let position = 1; position <= 2; position++) {
+            if (lineup['court'][court][position] !== null &&
+                lineup['court'][court][position]['sub']) {
+              firstSub = [court, lineup['court'][court][position]];
+              break;
             }
           }
-        });
-      }
+        }
+      });
       return notes;
     };
     
+    // Players can't play in more than one match.
     const notes6g = (division, team, lineup) => {
-      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      const players = {};
+      [1,2,3,4,5,6].forEach(court => {
+        [1,2].forEach(position => {
+          if (lineup['court'][court][position] !== null) {
+            if (players[lineup['court'][court][position]['name']]) {
+              notes[court].push({message: lineup['court'][court][position]['name'] +
+                                 ' already playing on court ' +
+                                 players[lineup['court'][court][position]['name']]});
+            } else {
+              players[lineup['court'][court][position]['name']] = court;
+            }
+          }
+        });
+      });
+      return notes;
     };
     
     const notes6 = (division, team, lineup) => {
       return concatNotes(notes6d(division, team, lineup), notes6g(division, team, lineup));
     };
 
+    // First and second players can only play courts 1 and 2.
+    const notes7ai = (division, team, lineup) => {
+      const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      [3,4,5,6].forEach(court => {
+        [1,2].forEach(position => {
+          if (lineup['court'][court][position] !== null &&
+              (lineup['court'][court][position]['rank'] === 1 ||
+               lineup['court'][court][position]['rank'] === 2)) {
+            notes[court].push({message: 'Protected player ' +
+                               lineup['court'][court][position]['name'] +
+                               ' (' + lineup['court'][court][position]['rank'] + ') ' +
+                               'can only play on courts 1 or 2'});
+          }
+        });
+      });
+      return notes;
+    };
+    
+    // Third through fifth players can only play courts 1-3.
+    const notes7aii = (division, team, lineup) => {
+      const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      [4,5,6].forEach(court => {
+        [1,2].forEach(position => {
+          if (lineup['court'][court][position] !== null &&
+              (lineup['court'][court][position]['rank'] === 3 ||
+               lineup['court'][court][position]['rank'] === 4 ||
+               lineup['court'][court][position]['rank'] === 5)) {
+            notes[court].push({message: 'Protected player ' +
+                               lineup['court'][court][position]['name'] +
+                               ' (' + lineup['court'][court][position]['rank'] + ') ' +
+                               'can only play on courts 1, 2 or 3'});
+          }
+        });
+      });
+      return notes;
+    };
+    
+    // Unranked player can't play above ranked player on court 1.
+    const notes7aiii = (division, team, lineup) => {
+      const notes = {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      let unrankedPlayer = null;
+      [1,2].forEach(position => {
+        if (!unrankedPlayer &&
+            lineup['court'][1][position] !== null &&
+            lineup['court'][1][position]['rank'] === undefined) {
+          unrankedPlayer = lineup['court'][1][position];
+        }
+      });
+      if (!unrankedPlayer) {
+        return notes;
+      }
+      [2,3,4,5,6].forEach(court => {
+        [1,2].forEach(position => {
+          if (lineup['court'][court][position] !== null &&
+              lineup['court'][court][position]['rank'] !== undefined) {
+            notes[1].push({message: 'Unranked player ' +
+                           unrankedPlayer['name'] +
+                           ' cannot play above protected player ' +
+                           lineup['court'][court][position]['name'] +
+                           ' (' + lineup['court'][court][position]['rank'] + ') ' +
+                           ' on court ' + court});
+          }
+        });
+      });
+      return notes;
+    };
+    
     const notes7 = (division, team, lineup) => {
-      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+      return concatNotes(concatNotes(notes7ai(division, team, lineup), notes7aii(division, team, lineup)), notes7aiii(division, team, lineup));
     };
     
     const general = (division, team, lineup) => {
