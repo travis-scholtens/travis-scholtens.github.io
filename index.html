@@ -224,7 +224,8 @@
       [1,2].forEach(position => {
         if (!unrankedPlayer &&
             lineup['court'][1][position] !== null &&
-            lineup['court'][1][position]['rank'] === undefined) {
+            lineup['court'][1][position]['rank'] === undefined &&
+            !lineup['court'][1][position]['adhoc']) {
           unrankedPlayer = lineup['court'][1][position];
         }
       });
@@ -315,7 +316,9 @@
             note.classList.add('warning');
           }
           note.innerText = item['message'];
-          innerDiv.appendChild(note);
+          const noteDiv = document.createElement('div');
+          noteDiv.appendChild(note);
+          innerDiv.appendChild(noteDiv);
         });
         
         return line;
