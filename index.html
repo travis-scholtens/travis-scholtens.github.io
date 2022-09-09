@@ -85,7 +85,41 @@
       return players.concat([sub, other]);
     };
     
+    const concatNotes = (a, b) => {
+      const res = {};
+      [1,2,3,4,5,6].forEach(court => {
+        res[court] = a[court].concat(b[court]);
+      });
+      return res;
+    };
+    
+    const notes6d = (division, team, lineup) => {
+      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+    };
+    
+    const notes6g = (division, team, lineup) => {
+      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+    };
+    
+    const notes6 = (division, team, lineup) => {
+      return concatNotes(notes6d(division, team, lineup), notes6g(division, team, lineup));
+    };
+
+    const notes7 = (division, team, lineup) => {
+      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+    };
+    
+    const general = (division, team, lineup) => {
+      return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
+    };
+    
+    const getNotes = (division, team, lineup) => {
+      return concatNotes(notes6(division, team, lineup), concatNotes(notes7(division, team, lineup), general(division, team, lineup)));
+    };
+    
     const editLineup = (division, team, lineup) => {
+      const notes = getNotes(division, team, lineup);
+      
       var lines = [1,2,3,4,5,6].map(court => {
         const line = document.createElement('div');
         line.class = 'list-group w-auto';
@@ -114,6 +148,16 @@
           player.innerText = playerInfo ? (playerInfo['name'] + (playerInfo['rank'] !== undefined ? ' (' + playerInfo['rank'] + ')' : '')) : 'Select...';
           innerDiv.appendChild(player);
         });
+        
+        notes[court].forEach(items => {
+          items.forEach(item => {
+            const note = document.createElement('div');
+            note.class = 'mb-0';
+            note.innerText = item['message'];
+            innerDiv.appendChild(note);
+          });
+        });
+        
         return line;
       });
       
