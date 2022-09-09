@@ -32,35 +32,40 @@
           availableSubs = availableSubs.concat(rosters[subDivision][team]);
         }
       });
-      return availableSubs.map(player => {
-        const name = document.createElement('div');
-        name.class = 'list-group w-auto';
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      availableSubs.map(player => {
+        const name = document.createElement('a');
+        name.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         name.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + player['name'] +
-          '</h6></div></div></a>';
+          '</h6></div></div>';
         name.addEventListener('click', () => {
           selectedPlayer = {court: court, position: position, player: {name: player['name'], sub: true}};
           history.back();
         });
         return name;
-      });
+      }).forEach(group.appendChild);
+      return [group];
     };
     
     const selectPlayer = (division, team, lineup, court, position) => {
-      const players = rosters[division][team].map(player => {
-        const name = document.createElement('div');
-        name.class = 'list-group w-auto';
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      rosters[division][team].map(player => {
+        const name = document.createElement('a');
+        name.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         name.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + player['name'] + (player['rank'] !== undefined ? ' (' + player['rank'] + ')' : '') +
-          '</h6></div></div></a>';
+          '</h6></div></div>';
         name.addEventListener('click', () => {
           selectedPlayer = {court: court, position: position, player: player};
           history.back();
         });
         return name;
-      });
+      }).forEach(group.appendChild);
           
       const sub = document.createElement('button');
       sub.class = 'w-100 btn btn-lg btn-primary';
@@ -82,7 +87,7 @@
       });
       other.appendChild(value);
           
-      return players.concat([sub, other]);
+      return [group, sub, other];
     };
     
     const concatNotes = (a, b) => {
@@ -237,13 +242,15 @@
     const editLineup = (division, team, lineup) => {
       const notes = getNotes(division, team, lineup);
       
-      var lines = [1,2,3,4,5,6].map(court => {
-        const line = document.createElement('div');
-        line.class = 'list-group w-auto';
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      [1,2,3,4,5,6].map(court => {
+        const line = document.createElement('a');
+        line.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         line.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div>'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div>'
           +
-          '</div></div></a>';
+          '</div></div>';
         let innerDiv = line;
         while (innerDiv.firstChild) {
           innerDiv = innerDiv.firstChild;
@@ -275,7 +282,7 @@
         });
         
         return line;
-      });
+      }).forEach(group.appendChild);
       
       const save = document.createElement('button');
       save.class = 'w-100 btn btn-lg btn-primary';
@@ -314,17 +321,19 @@
         history.back();
       });
       
-      return lines.concat([save, remove]);
+      return [group, save, remove];
     };
     
     const chooseTeam = division => {
-      return Object.keys(rosters[division]).sort().map(name => {
-        const team = document.createElement('div');
-        team.class = 'list-group w-auto';
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      Object.keys(rosters[division]).sort().map(name => {
+        const team = document.createElement('a');
+        team.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         team.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + name + 
-          '</h6></div></div></a>';
+          '</h6></div></div>';
         team.addEventListener('click', () => {
           const newLineup = {
             date: new Date().toJSON(),
@@ -341,23 +350,27 @@
           setContent(editLineup(division, name, newLineup));
         });
         return team;
-      });
+      }).forEach(group.appendChild);
+      return [group];
     };
     
     const chooseDivision = () => {
-      return Object.keys(rosters).sort().map(name => {
-        const division = document.createElement('div');
-        division.class = 'list-group w-auto';
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      Object.keys(rosters).sort().map(name => {
+        const division = document.createElement('a');
+        division.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         division.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + name + 
-          '</h6></div></div></a>';
+          '</h6></div></div>';
         division.addEventListener('click', () => {
           history.pushState({division: name}, 'Choose team');
           setContent(chooseTeam(name));
         });
         return division;
-      });
+      }).forEach(group.appendChild);
+      return [group];
     };
     
     const lineupList = () => {     
@@ -371,28 +384,30 @@
       
       const lineups = loadLineups();
       
-      const savedLineups = lineups.map(lineup_data => {
+      const group = document.createElement('div');
+      group.class = 'list-group w-auto';
+      lineups.map(lineup_data => {
         const division = lineup_data[0];
         const team = lineup_data[1];
         const lineup = lineup_data[2];
         
-        const edit = document.createElement('div');
-        edit.class = 'list-group w-auto';
+        const edit = document.createElement('a');
+        edit.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         edit.innerHTML =
-          '<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3"><div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
+          '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + lineup['date'] + ': '
           + division + ', '
           + team +
-          '</h6></div></div></a>';
+          '</h6></div></div>';
         edit.addEventListener('click', () => {
           history.pushState({division: division, team: team, lineup: lineup}, 'Edit lineup');
           setContent(editLineup(division, team, lineup));
         });
         
         return edit;
-      });
+      }).forEach(group.appendChild);
       
-      return [newLineup].concat(savedLineups);
+      return [newLineup, group];
     };
     
     const setContent = elements => {
