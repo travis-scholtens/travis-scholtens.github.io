@@ -262,7 +262,8 @@
             setContent(selectPlayer(division, team, lineup, court, position));
           });
           const playerInfo = lineup['court'][court][position];
-          player.innerText = playerInfo ? (playerInfo['name'] + (playerInfo['rank'] !== undefined ? ' (' + playerInfo['rank'] + ')' : '')) : 'Select...';
+          const notation = (playerInfo && playerInfo['rank'] !== undefined) ? playerInfo['rank'] : (playerInfo ? (playerInfo['sub'] || null) : null);
+          player.innerText = playerInfo ? (playerInfo['name'] + (notation ? ' (' + notation + ')' : '')) : 'Select...';
           innerDiv.appendChild(player);
         });
         
