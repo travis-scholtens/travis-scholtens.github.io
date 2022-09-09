@@ -297,7 +297,7 @@
           const player = document.createElement('div');
           player.className = 'mb-0';
           player.addEventListener('click', () => {
-            history.pushState({division: division, team: name, lineup: lineup, court: court, position: position}, 'Select player');
+            history.pushState({division: division, team: team, lineup: lineup, court: court, position: position}, 'Select player');
             setContent(selectPlayer(division, team, lineup, court, position));
           });
           const playerInfo = lineup['court'][court][position];
