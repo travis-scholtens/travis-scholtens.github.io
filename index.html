@@ -480,7 +480,12 @@
         } else if (state['division'] !== undefined) {
           if (state['lineup'] !== undefined) {
             if (state['court'] !== undefined) {
-              setContent(selectPlayer(state['division'], state['team'], state['lineup'], state['court'], state['position']));
+              if (selectedPlayer !== null) {
+                // Came from sub selection, back it up another level
+                history.back();
+              } else {
+                setContent(selectPlayer(state['division'], state['team'], state['lineup'], state['court'], state['position']));
+              }
             } else {
               if (selectedPlayer !== null) {
                 state['lineup']['court'][selectedPlayer['court']][selectedPlayer['position']] = selectedPlayer['player'];
