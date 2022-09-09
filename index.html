@@ -33,10 +33,10 @@
         }
       });
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       availableSubs.map(player => {
         const name = document.createElement('a');
-        name.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        name.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         name.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + player['name'] +
@@ -52,10 +52,10 @@
     
     const selectPlayer = (division, team, lineup, court, position) => {
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       rosters[division][team].map(player => {
         const name = document.createElement('a');
-        name.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        name.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         name.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + player['name'] + (player['rank'] !== undefined ? ' (' + player['rank'] + ')' : '') +
@@ -68,7 +68,7 @@
       }).forEach(e => group.appendChild(e));
           
       const sub = document.createElement('button');
-      sub.class = 'w-100 btn btn-lg btn-primary';
+      sub.className = 'w-100 btn btn-lg btn-primary';
       sub.innerText = 'Sub...'
       sub.addEventListener('click', () => {
         history.pushState({division: division, team: team, lineup: lineup, court: court, position: position, sub: true}, 'Select sub');
@@ -243,10 +243,10 @@
       const notes = getNotes(division, team, lineup);
       
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       [1,2,3,4,5,6].map(court => {
         const line = document.createElement('a');
-        line.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        line.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         line.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div>'
           +
@@ -257,13 +257,13 @@
         }
         
         const courtTitle = document.createElement('h6');
-        courtTitle.class = 'mb-0';
+        courtTitle.className = 'mb-0';
         courtTitle.innerText = court;
         innerDiv.appendChild(courtTitle);
 
         [1,2].forEach(position => {
           const player = document.createElement('div');
-          player.class = 'mb-0';
+          player.className = 'mb-0';
           player.addEventListener('click', () => {
             history.pushState({division: division, team: name, lineup: lineup, court: court, position: position}, 'Select player');
             setContent(selectPlayer(division, team, lineup, court, position));
@@ -276,7 +276,7 @@
         
         notes[court].forEach(item => {
           const note = document.createElement('div');
-          note.class = 'mb-0';
+          note.className = 'mb-0';
           note.innerText = item['message'];
           innerDiv.appendChild(note);
         });
@@ -285,7 +285,7 @@
       }).forEach(e => group.appendChild(e));
       
       const save = document.createElement('button');
-      save.class = 'w-100 btn btn-lg btn-primary';
+      save.className = 'w-100 btn btn-lg btn-primary';
       save.innerText = 'Save'
       save.addEventListener('click', () => {
         let lineups = loadLineups();
@@ -306,7 +306,7 @@
       });
       
       const remove = document.createElement('button');
-      remove.class = 'w-100 btn btn-lg btn-primary';
+      remove.className = 'w-100 btn btn-lg btn-primary';
       remove.innerText = 'Remove'
       remove.addEventListener('click', () => {
         let lineups = loadLineups();
@@ -326,10 +326,10 @@
     
     const chooseTeam = division => {
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       Object.keys(rosters[division]).sort().map(name => {
         const team = document.createElement('a');
-        team.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        team.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         team.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + name + 
@@ -356,10 +356,10 @@
     
     const chooseDivision = () => {
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       Object.keys(rosters).sort().map(name => {
         const division = document.createElement('a');
-        division.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        division.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         division.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + name + 
@@ -375,7 +375,7 @@
     
     const lineupList = () => {     
       const newLineup = document.createElement('button');
-      newLineup.class = 'w-100 btn btn-lg btn-primary';
+      newLineup.className = 'w-100 btn btn-lg btn-primary';
       newLineup.innerText = 'New...'
       newLineup.addEventListener('click', () => {
         history.pushState({divisions: true}, 'Choose division');
@@ -385,14 +385,14 @@
       const lineups = loadLineups();
       
       const group = document.createElement('div');
-      group.class = 'list-group w-auto';
+      group.className = 'list-group w-auto';
       lineups.map(lineup_data => {
         const division = lineup_data[0];
         const team = lineup_data[1];
         const lineup = lineup_data[2];
         
         const edit = document.createElement('a');
-        edit.class = 'list-group-item list-group-item-action d-flex gap-3 py-3';
+        edit.className = 'list-group-item list-group-item-action d-flex gap-3 py-3';
         edit.innerHTML =
           '<div class="d-flex gap-2 w-100 justify-content-between"><div><h6 class="mb-0">'
           + lineup['date'] + ': '
