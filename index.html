@@ -40,13 +40,22 @@
     let selectedPlayer = null;
     
     let saved = false;
+
+    const teamPrefix = team => {
+      return team.substring(0, team.lastIndexOf(' '));
+    };
     
     const selectSub = (division, team, lineup, court, position) => {
       let availableSubs = [];
       Object.keys(rosters).forEach(subDivision => {
-        if (subDivision > division && rosters[subDivision][team] !== undefined) {
-          availableSubs = availableSubs.concat(rosters[subDivision][team]);
+        if (subDivision <= division) {
+          return;
         }
+        Object.keys(rosters[subDivision]).forEach(subTeam => {
+          if(teamPrefix(team) == teamPrefix(subTeam)) {
+            availableSubs = availableSubs.concat(rosters[subDivision][subTeam]);
+          }
+        });
       });
       const group = document.createElement('div');
       group.className = 'list-group w-auto';
