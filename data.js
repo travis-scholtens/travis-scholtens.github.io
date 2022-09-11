@@ -251,15 +251,13 @@ const rosters = {
         "rank": 4
       },
       {
-        "name": "Greg J Mogil",
-        "rank": 1
+        "name": "Greg J Mogil"
       },
       {
         "name": "James Hughes, Jr."
       },
       {
-        "name": "John Meade",
-        "rank": 2
+        "name": "John Meade"
       },
       {
         "name": "Jon Reese",
@@ -269,16 +267,17 @@ const rosters = {
         "name": "Matthew T Gardner"
       },
       {
-        "name": "Michael Baglio",
-        "rank": 1
+        "name": "Michael Baglio"
       },
       {
-        "name": "Michael Killeen",
-        "rank": 4
+        "name": "Michael Killeen"
       },
       {
         "name": "Raymond ten Hoopen",
         "rank": 3
+      },
+      {
+        "name": "Rich LaForce"
       },
       {
         "name": "Steve A. Souhrada"
@@ -326,6 +325,9 @@ const rosters = {
       {
         "name": "James p Bandler",
         "rank": 2
+      },
+      {
+        "name": "Mitch Tamkin"
       },
       {
         "name": "Rod Moskowitz",
@@ -469,6 +471,10 @@ const rosters = {
       },
       {
         "name": "Michael Stiuso"
+      },
+      {
+        "name": "Robert Weppler",
+        "rank": 2
       },
       {
         "name": "Ron Rainone"
@@ -718,6 +724,9 @@ const rosters = {
         "name": "Doug  Johnston"
       },
       {
+        "name": "Joseph M. Sciortino, Jr."
+      },
+      {
         "name": "Michael L. Gannon",
         "rank": 5
       },
@@ -756,6 +765,9 @@ const rosters = {
       },
       {
         "name": "Tony Cappellino"
+      },
+      {
+        "name": "William Tregarthen"
       }
     ],
     "The Head of the Bay Club": [
@@ -1015,6 +1027,9 @@ const rosters = {
         "name": "Louis Parks"
       },
       {
+        "name": "Sean M McCarthy"
+      },
+      {
         "name": "Todd Weiss"
       }
     ],
@@ -1186,10 +1201,20 @@ const rosters = {
         "name": "David DeBaun"
       },
       {
+        "name": "Gilroy Fernandes"
+      },
+      {
         "name": "Jerry  Love"
       },
       {
         "name": "Nicholas Sarchese"
+      },
+      {
+        "name": "Nikos Theodosopoulos",
+        "rank": 5
+      },
+      {
+        "name": "Richard Gallucci"
       },
       {
         "name": "Scott O\u2019Neill"
@@ -1322,6 +1347,9 @@ const rosters = {
         "name": "Campbell Hooper"
       },
       {
+        "name": "Christian  Diez"
+      },
+      {
         "name": "Daniel Miller"
       },
       {
@@ -1359,6 +1387,9 @@ const rosters = {
     ],
     "Nassau Country Club": [
       {
+        "name": "Ken Doyle"
+      },
+      {
         "name": "Thomas McGoldrick",
         "rank": 4
       },
@@ -1383,10 +1414,16 @@ const rosters = {
     ],
     "Port Washington Yacht Club": [
       {
+        "name": "Adam Zickerman"
+      },
+      {
         "name": "Brian Smetana"
       },
       {
         "name": "Chris Gammon"
+      },
+      {
+        "name": "David  Michaels "
       },
       {
         "name": "Eric Belanich",
@@ -1451,6 +1488,9 @@ const rosters = {
       },
       {
         "name": "Ryan Halsted "
+      },
+      {
+        "name": "Sean Ryker"
       },
       {
         "name": "Timothy Crowley",
@@ -1523,9 +1563,6 @@ const rosters = {
         "name": "Bill Carroll"
       },
       {
-        "name": "Christian  Diez"
-      },
-      {
         "name": "Christopher  Schoppner "
       },
       {
@@ -1580,8 +1617,14 @@ const rosters = {
     ],
     "Port Washington Yacht Club": [
       {
+        "name": "Mike Vogell"
+      },
+      {
         "name": "lee rosenthal",
         "rank": 1
+      },
+      {
+        "name": "stephen lampard"
       }
     ],
     "Southward Ho Country Club": [
