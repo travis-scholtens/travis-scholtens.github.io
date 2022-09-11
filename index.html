@@ -52,7 +52,10 @@
           return;
         }
         Object.keys(rosters[subDivision]).forEach(subTeam => {
-          if(teamPrefix(team) == teamPrefix(subTeam)) {
+          if(team == subTeam ||
+             team == teamPrefix(subTeam) ||
+             teamPrefix(team) == subTeam ||
+             teamPrefix(team) == teamPrefix(subTeam)) {
             availableSubs = availableSubs.concat(rosters[subDivision][subTeam]);
           }
         });
