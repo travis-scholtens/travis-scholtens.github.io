@@ -241,6 +241,10 @@ const rosters = {
         "name": "Brad Thurman"
       },
       {
+        "name": "Michael  J Braunshweiger",
+        "rank": 2
+      },
+      {
         "name": "Paul Wallack",
         "rank": 1
       }
@@ -463,10 +467,6 @@ const rosters = {
         "rank": 1
       },
       {
-        "name": "Gary Stein",
-        "rank": 1
-      },
-      {
         "name": "Michael Ryan"
       },
       {
@@ -475,9 +475,6 @@ const rosters = {
       {
         "name": "Robert Weppler",
         "rank": 2
-      },
-      {
-        "name": "Ron Rainone"
       },
       {
         "name": "Santo Vasquez"
@@ -515,6 +512,10 @@ const rosters = {
       },
       {
         "name": "Usman Ahmad",
+        "rank": 3
+      },
+      {
+        "name": "William J. Neville",
         "rank": 3
       }
     ],
@@ -688,6 +689,10 @@ const rosters = {
         "name": "Brian Jackelow"
       },
       {
+        "name": "Brian Record",
+        "rank": 2
+      },
+      {
         "name": "Charles Trunz",
         "rank": 2
       },
@@ -696,6 +701,10 @@ const rosters = {
       },
       {
         "name": "John Kurkjian"
+      },
+      {
+        "name": "Kee Chan",
+        "rank": 4
       },
       {
         "name": "Michael S Prokop"
@@ -762,6 +771,9 @@ const rosters = {
       },
       {
         "name": "Tom Lauritano"
+      },
+      {
+        "name": "Tom Soumakis"
       },
       {
         "name": "Tony Cappellino"
@@ -1027,6 +1039,9 @@ const rosters = {
         "name": "Louis Parks"
       },
       {
+        "name": "Salvatore Russo"
+      },
+      {
         "name": "Sean M McCarthy"
       },
       {
@@ -1187,6 +1202,9 @@ const rosters = {
       }
     ],
     "Port Washington Yacht Club": [
+      {
+        "name": "Andrew Babaian"
+      },
       {
         "name": "Andrew Simons"
       },
@@ -1430,6 +1448,9 @@ const rosters = {
         "rank": 2
       },
       {
+        "name": "George Catallo"
+      },
+      {
         "name": "Greg Emmanuelidis",
         "rank": 3
       },
@@ -1453,6 +1474,9 @@ const rosters = {
       },
       {
         "name": "Justin Draycott "
+      },
+      {
+        "name": "Randy  Hinrichs "
       },
       {
         "name": "Robert Musacchio"
@@ -1537,6 +1561,9 @@ const rosters = {
         "name": "Marc Serafino"
       },
       {
+        "name": "Nick Forelli"
+      },
+      {
         "name": "Patrick McHugh"
       },
       {
@@ -1563,6 +1590,9 @@ const rosters = {
         "name": "Bill Carroll"
       },
       {
+        "name": "Brian Cobb"
+      },
+      {
         "name": "Christopher  Schoppner "
       },
       {
@@ -1573,6 +1603,10 @@ const rosters = {
       },
       {
         "name": "James Peters"
+      },
+      {
+        "name": "Joseph Erigo",
+        "rank": 4
       },
       {
         "name": "Kevin Kortsep"
@@ -1611,6 +1645,9 @@ const rosters = {
       }
     ],
     "Manhasset Bay Yacht Club": [
+      {
+        "name": "Joe Solano"
+      },
       {
         "name": "Peter Steincke"
       }
