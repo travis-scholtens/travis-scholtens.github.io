@@ -412,6 +412,9 @@ const rosters = {
         "name": "Jack Nielsen"
       },
       {
+        "name": "Kevin Rose"
+      },
+      {
         "name": "Robert E Zola",
         "rank": 1
       },
@@ -1054,6 +1057,9 @@ const rosters = {
         "name": "John Hyland"
       },
       {
+        "name": "Ken Takahashi"
+      },
+      {
         "name": "Koray Yilmaz",
         "rank": 1
       },
@@ -1480,6 +1486,9 @@ const rosters = {
       },
       {
         "name": "David  Michaels "
+      },
+      {
+        "name": "David J Chapman"
       },
       {
         "name": "Eric Belanich",
