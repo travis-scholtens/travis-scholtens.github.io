@@ -2,6 +2,9 @@ const rosters = {
   "Division 1": {
     "Creek-Piping Rock": [
       {
+        "name": "George Wheatley IV"
+      },
+      {
         "name": "Greg Evans"
       },
       {
@@ -29,6 +32,9 @@ const rosters = {
     ],
     "Crest Hollow Country Club": [
       {
+        "name": "Alfred Morgan"
+      },
+      {
         "name": "Joseph P McGorry"
       }
     ],
@@ -54,10 +60,17 @@ const rosters = {
         "rank": 4
       },
       {
+        "name": "Steve Perrone Jr."
+      },
+      {
         "name": "William Clarke, Jr."
       }
     ],
     "Garden City Golf Club": [
+      {
+        "name": "Bobby Quinn",
+        "rank": 2
+      },
       {
         "name": "Chris Brosnan"
       },
@@ -70,6 +83,10 @@ const rosters = {
       },
       {
         "name": "Matthew Heaney"
+      },
+      {
+        "name": "Neal D. Griffin",
+        "rank": 3
       },
       {
         "name": "Peter Samaan"
@@ -202,6 +219,9 @@ const rosters = {
         "name": "Jake R Dalpiaz"
       },
       {
+        "name": "Kriss Gulbrandsen"
+      },
+      {
         "name": "Martin Racanelli Jr."
       },
       {
@@ -213,6 +233,9 @@ const rosters = {
     "Cherry Valley Club": [
       {
         "name": "Adam Kohart"
+      },
+      {
+        "name": "David Koenig"
       },
       {
         "name": "Gerard Smith",
@@ -237,6 +260,20 @@ const rosters = {
         "name": "Andy Hauser"
       },
       {
+        "name": "Benjamin B Stokes",
+        "rank": 2
+      },
+      {
+        "name": "Cam Schnier"
+      },
+      {
+        "name": "George M (Jay) Wheatley III"
+      },
+      {
+        "name": "Gunnar Overstrom",
+        "rank": 1
+      },
+      {
         "name": "Ian M. Huschle",
         "rank": 5
       },
@@ -253,7 +290,13 @@ const rosters = {
         "name": "Morgan McLanahan"
       },
       {
+        "name": "Rick Schnier, Jr."
+      },
+      {
         "name": "Robert Weissman"
+      },
+      {
+        "name": "Scott McLellan"
       },
       {
         "name": "Timothy J McAndrew",
@@ -262,6 +305,9 @@ const rosters = {
       {
         "name": "Tony Kemper",
         "rank": 3
+      },
+      {
+        "name": "William Burchfield"
       }
     ],
     "Crest Hollow Country Club A": [
@@ -299,6 +345,10 @@ const rosters = {
     ],
     "Garden City Recreation": [
       {
+        "name": "Bill Metzler",
+        "rank": 4
+      },
+      {
         "name": "Stephen Testa"
       }
     ],
@@ -319,6 +369,9 @@ const rosters = {
       {
         "name": "Anthony Danzi",
         "rank": 4
+      },
+      {
+        "name": "Brad Hemingway"
       },
       {
         "name": "Brian P Doherty"
@@ -359,6 +412,9 @@ const rosters = {
         "name": "Steve A. Souhrada"
       },
       {
+        "name": "Terry Gardner"
+      },
+      {
         "name": "Timothy Gomes"
       }
     ],
@@ -395,6 +451,10 @@ const rosters = {
         "rank": 1
       },
       {
+        "name": "Dario Benun",
+        "rank": 4
+      },
+      {
         "name": "Dean Chiungos",
         "rank": 5
       },
@@ -408,6 +468,9 @@ const rosters = {
       {
         "name": "James p Bandler",
         "rank": 2
+      },
+      {
+        "name": "Jordan Wand"
       },
       {
         "name": "Michael Gebhardt"
@@ -433,6 +496,9 @@ const rosters = {
       {
         "name": "John Einemann",
         "rank": 2
+      },
+      {
+        "name": "Steven D White"
       }
     ],
     "Garden City Recreation": [
@@ -521,10 +587,16 @@ const rosters = {
         "name": "AV Armonas"
       },
       {
+        "name": "Alex Woodworth"
+      },
+      {
         "name": "Andrew Reynolds"
       },
       {
         "name": "Andrew Rolih"
+      },
+      {
+        "name": "Andy Staib"
       },
       {
         "name": "Brian W Olson"
@@ -548,10 +620,16 @@ const rosters = {
         "name": "Dylan Hamer"
       },
       {
+        "name": "Joseph Labuda"
+      },
+      {
         "name": "Mark W Hamer"
       },
       {
         "name": "Matt Arcati"
+      },
+      {
+        "name": "Richard Rottkamp"
       },
       {
         "name": "Thomas Carroll"
@@ -566,10 +644,20 @@ const rosters = {
         "rank": 1
       },
       {
+        "name": "Evan L Held"
+      },
+      {
         "name": "Michael Ryan"
       },
       {
         "name": "Michael Stiuso"
+      },
+      {
+        "name": "Peter Rosseland"
+      },
+      {
+        "name": "Robert Rosso",
+        "rank": 4
       },
       {
         "name": "Robert Weppler",
@@ -579,12 +667,26 @@ const rosters = {
         "name": "Santo Vasquez"
       },
       {
+        "name": "Steven Rohlfing",
+        "rank": 3
+      },
+      {
         "name": "William C. Collard"
+      },
+      {
+        "name": "chris o'connor",
+        "rank": 2
       }
     ],
     "Nassau Country Club": [
       {
+        "name": "Charles Ritter"
+      },
+      {
         "name": "Kevin Mercier"
+      },
+      {
+        "name": "Nick Bortolussi"
       },
       {
         "name": "Stephen Flynn",
@@ -605,6 +707,9 @@ const rosters = {
       {
         "name": "Matt Alevy",
         "rank": 5
+      },
+      {
+        "name": "Mike Fogarty"
       },
       {
         "name": "Randy Meister"
@@ -631,6 +736,15 @@ const rosters = {
         "name": "Alec Ornstein"
       },
       {
+        "name": "Gregg Evangelist"
+      },
+      {
+        "name": "Howard G Einhorn "
+      },
+      {
+        "name": "James Rhodes"
+      },
+      {
         "name": "James b St.John",
         "rank": 1
       },
@@ -645,8 +759,14 @@ const rosters = {
         "rank": 1
       },
       {
+        "name": "Raymond J Yeager"
+      },
+      {
         "name": "Rob Meagher",
         "rank": 3
+      },
+      {
+        "name": "Robert Milkowski"
       }
     ]
   },
@@ -654,9 +774,6 @@ const rosters = {
     "Cherry Valley Club": [
       {
         "name": "Alex deLaricheliere"
-      },
-      {
-        "name": "Alexander Weber"
       },
       {
         "name": "Brad W Barnett"
@@ -709,8 +826,17 @@ const rosters = {
     ],
     "Garden City Country Club": [
       {
+        "name": "Bob Coors"
+      },
+      {
+        "name": "Christopher M. Dowd"
+      },
+      {
         "name": "Doug Donnelly",
         "rank": 2
+      },
+      {
+        "name": "Frank Rio"
       },
       {
         "name": "Joseph Ingegno"
@@ -722,21 +848,33 @@ const rosters = {
         "name": "Matthew Ingegno"
       },
       {
+        "name": "Michael Fischer"
+      },
+      {
         "name": "Robert C Quaco",
         "rank": 5
       },
       {
         "name": "Salvatore Norberto",
         "rank": 4
+      },
+      {
+        "name": "Steve Perrone"
       }
     ],
     "Garden City Golf Club": [
+      {
+        "name": "Alex Castronovo"
+      },
       {
         "name": "Billy Roberti",
         "rank": 2
       },
       {
         "name": "Christopher Testa"
+      },
+      {
+        "name": "John R Kucharczyk"
       },
       {
         "name": "Matthew T. Brown"
@@ -774,7 +912,14 @@ const rosters = {
         "name": "John P Daley"
       },
       {
+        "name": "Kevin J Kiely",
+        "rank": 4
+      },
+      {
         "name": "Leon McCullough"
+      },
+      {
+        "name": "Richard Rudolph"
       }
     ],
     "Garden City Recreation B": [
@@ -792,10 +937,16 @@ const rosters = {
         "rank": 5
       },
       {
+        "name": "Jack Switala"
+      },
+      {
         "name": "John Schlipf"
       },
       {
         "name": "Kevin Crowley"
+      },
+      {
+        "name": "Kevin Reilly"
       },
       {
         "name": "Michael J Kollman"
@@ -819,7 +970,12 @@ const rosters = {
         "name": "Ryan Falvey"
       }
     ],
-    "Nassau Country Club": [],
+    "Nassau Country Club": [
+      {
+        "name": "John Cook",
+        "rank": 5
+      }
+    ],
     "Plandome Country Club": [
       {
         "name": "Brian Jackelow"
@@ -854,6 +1010,9 @@ const rosters = {
       }
     ],
     "Port Washington Yacht Club": [
+      {
+        "name": "Andrew Drazic"
+      },
       {
         "name": "Charles P Caccavo"
       },
@@ -895,6 +1054,13 @@ const rosters = {
         "name": "Andrew T Fullam"
       },
       {
+        "name": "Damian Zusi"
+      },
+      {
+        "name": "Douglas T Delisle",
+        "rank": 3
+      },
+      {
         "name": "Joseph Fiorillo"
       },
       {
@@ -926,6 +1092,10 @@ const rosters = {
         "name": "Daniel T. Scully"
       },
       {
+        "name": "Richard Rongo",
+        "rank": 5
+      },
+      {
         "name": "Tim Sheerin"
       }
     ],
@@ -954,7 +1124,17 @@ const rosters = {
   "Division 5": {
     "Cherry Valley Club": [
       {
+        "name": "Alexander Weber",
+        "rank": 3
+      },
+      {
         "name": "Andrew Gillette"
+      },
+      {
+        "name": "Andrew Granville"
+      },
+      {
+        "name": "Andrew Haggerty"
       },
       {
         "name": "Bill Hannan"
@@ -975,7 +1155,8 @@ const rosters = {
         "name": "JT Groarke"
       },
       {
-        "name": "James Haggerty"
+        "name": "James Haggerty",
+        "rank": 1
       },
       {
         "name": "James Healy"
@@ -1023,6 +1204,10 @@ const rosters = {
         "name": "Douglas Johnson"
       },
       {
+        "name": "Jeffrey A. Higgs",
+        "rank": 2
+      },
+      {
         "name": "Jeffrey G Schneider"
       },
       {
@@ -1040,6 +1225,10 @@ const rosters = {
       {
         "name": "Kenneth B.  Collins",
         "rank": 5
+      },
+      {
+        "name": "Michael Criswell",
+        "rank": 2
       }
     ],
     "Garden City Country Club": [
@@ -1061,6 +1250,10 @@ const rosters = {
         "rank": 5
       },
       {
+        "name": "Jack T Brennan",
+        "rank": 4
+      },
+      {
         "name": "Jim Palmer"
       },
       {
@@ -1076,6 +1269,10 @@ const rosters = {
         "name": "Tom Jessop"
       },
       {
+        "name": "Will Lucano",
+        "rank": 1
+      },
+      {
         "name": "William Appelt",
         "rank": 3
       }
@@ -1083,6 +1280,10 @@ const rosters = {
     "Garden City Recreation A": [
       {
         "name": "Adrian Mariacher"
+      },
+      {
+        "name": "Anthony Cordio",
+        "rank": 5
       },
       {
         "name": "Anthony J DiMasso"
@@ -1100,12 +1301,18 @@ const rosters = {
         "rank": 1
       },
       {
+        "name": "Matthew Tepper"
+      },
+      {
         "name": "Michael Sambus",
         "rank": 1
       },
       {
         "name": "Ryan Seifert",
         "rank": 2
+      },
+      {
+        "name": "Sean M.  Tedesco"
       }
     ],
     "Garden City Recreation B": [
@@ -1122,10 +1329,16 @@ const rosters = {
         "name": "David Kilkenny"
       },
       {
+        "name": "Felipe Toro"
+      },
+      {
         "name": "John Apostolides"
       },
       {
         "name": "Michael Linchitz"
+      },
+      {
+        "name": "Rob Ferrari"
       },
       {
         "name": "Rob Reheuser"
@@ -1148,6 +1361,10 @@ const rosters = {
       {
         "name": "James  Sweeney",
         "rank": 3
+      },
+      {
+        "name": "Paul Kenney",
+        "rank": 1
       },
       {
         "name": "Peter Mitchell"
@@ -1174,6 +1391,9 @@ const rosters = {
         "name": "Joe Cooney"
       },
       {
+        "name": "Louis M. Lagalante"
+      },
+      {
         "name": "Tim Mangan"
       }
     ],
@@ -1190,6 +1410,9 @@ const rosters = {
         "name": "Joe  Asselta"
       },
       {
+        "name": "John Hogan"
+      },
+      {
         "name": "John Hyland"
       },
       {
@@ -1201,6 +1424,9 @@ const rosters = {
       },
       {
         "name": "Louis Parks"
+      },
+      {
+        "name": "Michael Lyons"
       },
       {
         "name": "Salvatore Russo"
@@ -1226,6 +1452,9 @@ const rosters = {
       {
         "name": "Kieran Burke",
         "rank": 2
+      },
+      {
+        "name": "Mark Eads"
       },
       {
         "name": "Matt K Scheriff"
@@ -1256,37 +1485,33 @@ const rosters = {
         "rank": 5
       },
       {
-        "name": "Christopher  Dean",
-        "rank": 5
+        "name": "George Stiehl"
       },
       {
         "name": "Jerome Trimboli Jr"
+      },
+      {
+        "name": "Karl Pupke"
       },
       {
         "name": "Mark Prewett",
         "rank": 4
       },
       {
+        "name": "Matt Notine"
+      },
+      {
+        "name": "Pat A. Mallozzi",
+        "rank": 1
+      },
+      {
+        "name": "Roberto  Schettino"
+      },
+      {
         "name": "Ryan Wenzel"
-      },
-      {
-        "name": "Tom Walsh"
       }
     ],
-    "Garden City Recreation A": [
-      {
-        "name": "Donald Lang"
-      },
-      {
-        "name": "Jeff  Rundlet"
-      },
-      {
-        "name": "Michael Perry"
-      },
-      {
-        "name": "Trevor Charon"
-      }
-    ],
+    "Garden City Recreation A": [],
     "Garden City Recreation B": [
       {
         "name": "Chris Valerakis"
@@ -1304,6 +1529,9 @@ const rosters = {
         "name": "Jeff  Rundlet"
       },
       {
+        "name": "John Studdert"
+      },
+      {
         "name": "Keith Friedman"
       },
       {
@@ -1317,6 +1545,12 @@ const rosters = {
       },
       {
         "name": "Sean M OBrien"
+      },
+      {
+        "name": "Thomas Stenson"
+      },
+      {
+        "name": "Trevor Charon"
       }
     ],
     "Hempstead Golf and Country Club": [
@@ -1333,6 +1567,9 @@ const rosters = {
         "name": "Jeffrey Rommel"
       },
       {
+        "name": "Kevin Sullivan"
+      },
+      {
         "name": "Larry Brignati"
       },
       {
@@ -1347,11 +1584,27 @@ const rosters = {
     ],
     "Manhasset Bay Yacht Club": [
       {
+        "name": "Joe Stevens"
+      },
+      {
         "name": "John Harley",
         "rank": 4
       },
       {
+        "name": "Lloyd Reisman"
+      },
+      {
+        "name": "Mark Attanasio"
+      },
+      {
         "name": "Michael Bellino"
+      },
+      {
+        "name": "Paul Sebetic",
+        "rank": 5
+      },
+      {
+        "name": "Philip Sheridan"
       },
       {
         "name": "Richard Chambers",
@@ -1360,6 +1613,9 @@ const rosters = {
       {
         "name": "Robert Weppler",
         "rank": 2
+      },
+      {
+        "name": "Ron Rainone"
       },
       {
         "name": "Todd Gray"
@@ -1383,8 +1639,20 @@ const rosters = {
         "name": "John Catalano"
       },
       {
+        "name": "John Litke"
+      },
+      {
+        "name": "Joseph J Pollaci"
+      },
+      {
+        "name": "Michael A. Pesce"
+      },
+      {
         "name": "Michael McGlone",
         "rank": 5
+      },
+      {
+        "name": "Russell DiBenedetto"
       },
       {
         "name": "Tim Mangan"
@@ -1427,7 +1695,13 @@ const rosters = {
         "name": "Richard Gallucci"
       },
       {
+        "name": "Robert  Johns"
+      },
+      {
         "name": "Scott O\u2019Neill"
+      },
+      {
+        "name": "Scott T Taylor"
       },
       {
         "name": "Stephan Finazzo"
@@ -1436,6 +1710,10 @@ const rosters = {
     "The Head of the Bay Club": [
       {
         "name": "Edward J Hrybenko"
+      },
+      {
+        "name": "Kyle S. Kennelly",
+        "rank": 1
       },
       {
         "name": "Robert J Kline"
@@ -1455,6 +1733,9 @@ const rosters = {
         "name": "Daniel Jacobs"
       },
       {
+        "name": "David Rosen"
+      },
+      {
         "name": "David Weiner",
         "rank": 2
       },
@@ -1463,6 +1744,9 @@ const rosters = {
       },
       {
         "name": "Gregory Kalikow"
+      },
+      {
+        "name": "Jared Becker"
       },
       {
         "name": "Jeff Schmidt"
@@ -1494,6 +1778,9 @@ const rosters = {
       },
       {
         "name": "Scott Truelson"
+      },
+      {
+        "name": "William Schmergel"
       }
     ]
   },
@@ -1532,6 +1819,10 @@ const rosters = {
       },
       {
         "name": "Luis Castellanos"
+      },
+      {
+        "name": "Michael Monahan",
+        "rank": 5
       },
       {
         "name": "Patrick Smith"
@@ -1600,24 +1891,43 @@ const rosters = {
       },
       {
         "name": "Stev Frangioni "
+      },
+      {
+        "name": "Thomas Hines"
       }
     ],
     "Manhasset Bay Yacht Club": [
       {
+        "name": "Eric Linder"
+      },
+      {
         "name": "Haig Kilicyan"
+      },
+      {
+        "name": "James Kaul"
       },
       {
         "name": "Jason D Craven"
       },
       {
+        "name": "Jerry Madden",
+        "rank": 3
+      },
+      {
         "name": "Kurt Kiess"
       },
       {
         "name": "Kurt Kiess"
+      },
+      {
+        "name": "Martin Bergin"
       },
       {
         "name": "Patrick McGinness",
         "rank": 1
+      },
+      {
+        "name": "Paul Pescatore"
       },
       {
         "name": "Richard Lombard"
@@ -1634,7 +1944,14 @@ const rosters = {
         "name": "Ken Doyle"
       },
       {
+        "name": "Larry Ricketts",
+        "rank": 2
+      },
+      {
         "name": "Matthew Goldstein "
+      },
+      {
+        "name": "Michael Woods"
       },
       {
         "name": "Thomas McGoldrick",
@@ -1649,6 +1966,9 @@ const rosters = {
     ],
     "Plandome Country Club": [
       {
+        "name": "Austin Laverty"
+      },
+      {
         "name": "Benjamin Fernandez"
       },
       {
@@ -1659,15 +1979,33 @@ const rosters = {
         "name": "Garo Nazarian"
       },
       {
+        "name": "Jeremy Kilpatrick"
+      },
+      {
         "name": "Jim Baranello"
       },
       {
+        "name": "Peter Neckles"
+      },
+      {
+        "name": "Ryan Miller"
+      },
+      {
         "name": "Steven Nigro"
+      },
+      {
+        "name": "Terry Higgins"
+      },
+      {
+        "name": "Timothy Fulton"
       }
     ],
     "Port Washington Yacht Club": [
       {
         "name": "Adam Zickerman"
+      },
+      {
+        "name": "Brian Doyle"
       },
       {
         "name": "Brian Smetana"
@@ -1697,6 +2035,9 @@ const rosters = {
         "rank": 5
       },
       {
+        "name": "Kyle Crennan "
+      },
+      {
         "name": "Matthew Kassan"
       },
       {
@@ -1724,7 +2065,13 @@ const rosters = {
         "name": "Justin Draycott "
       },
       {
+        "name": "Philip Howe "
+      },
+      {
         "name": "Randy  Hinrichs "
+      },
+      {
+        "name": "Robert Herrick"
       },
       {
         "name": "Robert Musacchio"
@@ -1736,6 +2083,9 @@ const rosters = {
   },
   "Division 8": {
     "Cherry Valley Club": [
+      {
+        "name": "Alan Clark"
+      },
       {
         "name": "Brad Wolk"
       },
@@ -1793,6 +2143,9 @@ const rosters = {
         "name": "Brian Calame"
       },
       {
+        "name": "Brian Cashin"
+      },
+      {
         "name": "Brian Hay"
       },
       {
@@ -1822,6 +2175,9 @@ const rosters = {
       },
       {
         "name": "Marc Serafino"
+      },
+      {
+        "name": "Neil Williamson"
       },
       {
         "name": "Nick Forelli"
@@ -1914,11 +2270,30 @@ const rosters = {
       },
       {
         "name": "Tim Vitez"
+      },
+      {
+        "name": "tom gallucci",
+        "rank": 5
       }
     ],
     "Manhasset Bay Yacht Club": [
       {
+        "name": "Bill Coleman"
+      },
+      {
+        "name": "Gregory W Bachmann"
+      },
+      {
+        "name": "James Daloia"
+      },
+      {
         "name": "Joe Solano"
+      },
+      {
+        "name": "Matthew DeCicco"
+      },
+      {
+        "name": "Nick Valls"
       },
       {
         "name": "Peter Steincke"
@@ -1927,7 +2302,16 @@ const rosters = {
         "name": "Ralph DeSena"
       },
       {
+        "name": "Sanjay Chablaney"
+      },
+      {
         "name": "Steve Berlin"
+      },
+      {
+        "name": "Thomas Ng"
+      },
+      {
+        "name": "Victor Lee"
       }
     ],
     "Port Washington Yacht Club": [
@@ -1947,12 +2331,23 @@ const rosters = {
     ],
     "Southward Ho Country Club": [
       {
+        "name": "Baemen M Vertovez",
+        "rank": 3
+      },
+      {
         "name": "Bryan Whitlock",
         "rank": 4
       },
       {
         "name": "Christopher Post",
         "rank": 1
+      },
+      {
+        "name": "Don Anderson"
+      },
+      {
+        "name": "Doug Lange",
+        "rank": 2
       },
       {
         "name": "Matthew Campolettano"
