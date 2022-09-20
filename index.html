@@ -265,7 +265,7 @@
     };
     
     const notes7 = (division, team, lineup) => {
-      if (division < 7) {
+      if (division == 'Division 7' || division == 'Division 8') {
         return {1:[], 2:[], 3:[], 4:[], 5:[], 6:[]};
       }
       return concatNotes(concatNotes(notes7ai(division, team, lineup), notes7aii(division, team, lineup)), notes7aiii(division, team, lineup));
