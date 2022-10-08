@@ -91,6 +91,36 @@
     due to substitutions when a player needs to temporarily "play up" to fill
     an open position in a higher division team's lineup.
    </p>
+   <p>
+    In this kind of environment, TrueSkill ratings will accurately
+    rank players in the same division against one another, but will
+    fail to reflect any significant difference in skill between
+    divisions.
+   </p>
+   <p>
+    To remedy this, we separate players into the communities of players
+    who frequently compete among each other (divisions) using the
+    Louvain method (Blondel <i>et al.</i> 2008), and infer TrueSkill
+    ratings for each such community.
+   <p>
+    To predict outcomes of games among players from different initial
+    communities, we calculate the mean rating deltas between the local ratings
+    for all players who have competed with players in more than one community.
+    Those values are used to translate between local ratings when predicting
+    game outcomes when players belong to different communities.
+   </p>
+   <p>
+    We demonstrate the use of this approach on data from two seasons
+    of results from the
+    <a href="http://www.tfim.tenniscores.com">Tennis Féminin Interclub Montréal</a>
+    doubles tennis league. Players are divided into four leagues based on
+    skill level, but lower division players occasionally play in higher
+    divisions as substitutes, and players move between divisions from
+    one season to the next to reflect changes in their skills.
+   </p>
+   <p>
+    Inferring local skill levels for each community and translating as
+    necessary
    <h2>Discovering Divisions</h2>
    <h2>Converting Ratings Across Divisions</h2>
    <h2>Experimental Results</h2>
