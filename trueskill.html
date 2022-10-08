@@ -36,13 +36,20 @@
  <div class="abstract">
   <h2 class="nocount">Abstract</h2>
   <p>
-   We present an extension of the TrueSkill and
-   TrueSkill through time algorithms in the case of competitive
-   leagues where players are separated into divisions, and primarily
-   compete within their own division in a given season. By inferring
+   The TrueSkill and TrueSkill Through Time skill rating systems are
+   generally useful in ranking players in a population by skill level
+   by inferring skill levels from the outcomes of multiple games.
+   But in cases where players compete in leagues separated into divisions
+   by skill level, and primarily
+   compete within their own division in a given season, the inferred
+   skill levels are unreliable. High level players in one division
+   may be incorrectly ranked alongside less competitive players in
+   another, and as a consequence the model loses predictive accuracy,
+   particularly in games between players from different division.
+   By inferring
    skill independently among the players of each division, and then
    estimating skill differences across divisions, we improve upon
-   the accuracy of both TrueSkill and TrueSkill through time in
+   the accuracy of both TrueSkill and TrueSkill Through Time in
    predicting the outcomes of future competitions.
   </p>
  </div>
