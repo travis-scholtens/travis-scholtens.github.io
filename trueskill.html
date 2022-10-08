@@ -2,12 +2,39 @@
 <head>
  <title>TrueSkill for Divisions</title>
  <link rel="stylesheet" href="https://latex.now.sh/style.css">
+ <style>
+   body {
+     counter-reset: h2;
+   }
+   h1 {
+     counter-reset: h2;
+   }
+    
+   h2:before {
+     content: counter(h2) "\0000a0\0000a0";
+     counter-increment: h2;
+     counter-reset: h3;
+   }
+   h2.nocount:before {
+     content: none;
+     counter-increment: none;
+   }
+    
+   h3:before {
+     content: counter(h2) "." counter(h3) "\0000a0\0000a0";
+     counter-increment: h3counter;
+   }
+   h3.nocount:before {
+     content: none;
+     counter-increment: none;
+   }
+ </style>
 </head>
 <body>
  <h1>TrueSkill for Divisions</h1>
  <p class="author">Travis Scholtens</p>
  <div class="abstract">
-  <h2>Abstract</h2>
+  <h2 class="nocount">Abstract</h2>
   <p>
    We present an extension of the TrueSkill and
    TrueSkill through time algorithms in the case of competitive
@@ -23,5 +50,7 @@
  <h2>Introduction</h2>
  <h2>Discovering Divisions</h2>
  <h2>Converting Ratings Across Divisions</h2>
+ <h2>Experimental Results</h2>
+ <h2>Summary</h2>
 </body>
 </html>
