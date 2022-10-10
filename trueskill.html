@@ -7,7 +7,7 @@
  <link rel="stylesheet" href="https://latex.now.sh/style.css">
  <style>
    body {
-     counter-reset: h2;
+     counter-reset: h2 figure;
    }
    h1 {
      counter-reset: h2;
@@ -30,6 +30,15 @@
    h3.nocount:before {
      content: none;
      counter-increment: none;
+   }
+   
+   figure {
+     counter-increment: figure;
+   }
+   
+   figcaption::before {
+     content: 'Figure' ' counter(figure) '. ';
+     font-weight: bold;
    }
  </style>
 </head>
