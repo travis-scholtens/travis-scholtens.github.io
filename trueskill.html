@@ -32,12 +32,12 @@
      counter-increment: none;
    }
    
-   .figure {
+   figure {
      counter-increment: figure;
    }
    
-   .figure figcaption:before {
-     content: 'Figure' ' counter(figure) '. ';
+   figcaption:before {
+     content: 'Figure ' counter(figure) '. ';
      font-weight: bold;
    }
  </style>
