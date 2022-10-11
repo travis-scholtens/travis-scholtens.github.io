@@ -137,6 +137,14 @@
     players together.
    </p>
    <h2>Discovering Divisions</h2>
+   <p>
+    We don't need to know about players' division
+    membership <i>a priori</i>, as this information
+    is evident in the match data; we can
+    define a graph with a node for each
+    player and an edge between each pair who
+    face each other as opponents:
+   </p>
    <figure>
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0.00 0.00 302.14 432.00" height="432pt" width="302pt">
 <g transform="scale(.0085 .0085) rotate(0) translate(4 50909.4165)" class="graph" id="graph0">
@@ -52543,6 +52551,22 @@ Quynh Nhu Vo--Svetlana Sinitsina
      Network of player matchups in 2018.
     </figcaption>
    </figure>
+   <p>
+    Inspecting the graph to find divisions allows
+    us to handle situations where divisions are
+    very fluid, with lots of interdivisional play,
+    or when certain players substitute so much
+    not they are better analyzed outside of
+    their own divisions.
+   </p>
+   <p>
+    We detect divisions using the Louvain method
+    to identify communities of player nodes in the
+    opponents graph. Note that regular partners
+    end up in the same communities transitively,
+    by virtue of their playing the some opponents, without our needing to at edges between partners
+on the same side.
+   </p>
    <h2>Converting Ratings Across Divisions</h2>
    <h2>Experimental Results</h2>
    <h2>Summary</h2>
